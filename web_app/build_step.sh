@@ -28,8 +28,6 @@ elif [[ `git diff HEAD^ HEAD .`  && "$VERCEL_GIT_COMMIT_REF" != "main" ]]
     # Proceed with the build
     echo "✅ - Build can proceed - Change to web folder"
   exit 1;
-
-elif [[ ]]
 else
   # Don't build
   echo "🛑 - Build cancelled"
