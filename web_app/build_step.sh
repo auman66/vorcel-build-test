@@ -24,10 +24,11 @@ if [[ "$VERCEL_GIT_COMMIT_REF" == "web-dev" || "$VERCEL_GIT_COMMIT_REF" == "web-
   exit 1;
 
 # Build when there is a change to the web folder, unless the branch is main
-elif [[ `git diff HEAD^ HEAD .`  && "$VERCEL_GIT_COMMIT_REF" != "main" ]]
+elif [[ `git diff HEAD^ HEAD .`  && "$VERCEL_GIT_COMMIT_REF" != "main" ]] ; then
     # Proceed with the build
     echo "✅ - Build can proceed - Change to web folder"
   exit 1;
+
 else
   # Don't build
   echo "🛑 - Build cancelled"
