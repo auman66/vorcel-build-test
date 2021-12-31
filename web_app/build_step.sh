@@ -9,7 +9,7 @@ if [[ "$VERCEL_GIT_COMMIT_REF" == "web-dev" || "$VERCEL_GIT_COMMIT_REF" == "web-
 # Build when there is a change to the web folder, unless the branch is main
 elif [[ `git diff HEAD^ HEAD .` ]] ; then
   #if on main, only proceed if build main is set to true
-  if [[ "$VERCEL_GIT_COMMIT_REF" != "main" ]] ; then
+  if [[ "$VERCEL_GIT_COMMIT_REF" = "main" ]] ; then
     if [[ "$BUILD_MAIN" == "true" ]] ; then
       echo "✅ - Build can proceed on main"
       exit 1;
